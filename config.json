@@ -1,0 +1,11 @@
+{
+  "mongodb": {
+    "uri": "mongodb://username:password@localhost:27017/database?authSource=admin&authMechanism=SCRAM-SHA-256",
+    "database": "database_name",
+    "collection": "collection_name"
+  },
+  "elasticsearch": {
+    "host": "http://localhost:9200",
+    "index": "elastic_index_name"
+  }
+}
