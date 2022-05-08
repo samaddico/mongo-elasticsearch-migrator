@@ -1,3 +1,4 @@
+from typing import List
 from elasticsearch import helpers
 from pymongo import MongoClient
 from elasticsearch import Elasticsearch
@@ -35,7 +36,7 @@ def migrate():
           "_index": es_index,
           "_type" : es_index,
           "_id": str(mongo_id),
-          "_source": json.dumps(doc, default = defaultconverter)
+          "_source": json.dumps(doc, default = default_converter)
       })
 
   #helpers.parallel_bulk(client=es, actions=actions, thread_count=5,chunk_size=2500, raise_on_exception=True)
@@ -48,10 +49,22 @@ def load_config():
     return config
 
 
-def defaultconverter(o):
+def default_converter(o):
   if isinstance(o, (datetime, date)):
     return o.isoformat()
 
+
+def exclude_fields(fields: List):
+    return
+
+def generate_id():
+    return
+
+def __get_batch_size():
+    return 2000
+
+def parse():
+    return 2000
 
 if __name__ == "__main__":
    migrate()
