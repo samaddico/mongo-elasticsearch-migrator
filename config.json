@@ -6,6 +6,8 @@
   },
   "elasticsearch": {
     "host": "http://localhost:9200",
-    "index": "elastic_index_name"
+    "index": "elastic_index_name",
+    "username": "",
+    "password":""
   }
 }
